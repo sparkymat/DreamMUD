@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'dream_mud/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "dream_mud"
+  spec.name          = "DreamMUD"
   spec.version       = DreamMud::VERSION
   spec.authors       = ["Ajith Hussain"]
   spec.email         = ["csy0013@googlemail.com"]
