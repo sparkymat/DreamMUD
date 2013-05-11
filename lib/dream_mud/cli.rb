@@ -25,5 +25,14 @@ else
       creator = DreamMUD::ProjectCreator.new(ARGV[1])
       creator.setup
     end
+  when "s", "server"
+    if File.exists("config.run")
+      require './config.run'
+    else
+      puts "Error: Cannot find project configuration"
+    end
+  else
+    puts "Error: Unrecognized command '#{ARGV[0]}'"
+    show_help
   end
 end
