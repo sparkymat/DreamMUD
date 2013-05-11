@@ -3,6 +3,7 @@ dream_mud_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(dream_mud_path)
 require 'fileutils'
 require 'dream_mud/utils'
+require 'dream_mud/version'
 
 module DreamMUD
 class ProjectCreator
@@ -33,7 +34,7 @@ class ProjectCreator
   end
 
   def create_config
-    File.open("#{@path}/Gemfile") do |fp|
+    File.open("#{@path}/Gemfile", "w+") do |fp|
       fp.write("source 'https://rubygems.org'\n")
       fp.write("\n")
       fp.write("gem 'dream_mud', '#{DreamMUD::VERSION}'\n\n")
