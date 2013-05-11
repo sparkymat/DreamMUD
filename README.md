@@ -1,6 +1,6 @@
 # DreamMud
 
-TODO: Write a gem description
+DreamMUD is a MUD codebase inspired by ResortMUD, and developed in Ruby.
 
 ## Installation
 
