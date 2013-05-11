@@ -33,11 +33,28 @@ class ProjectCreator
   end
 
   def create_config
-    File.open( "#{@path}/config.run", "w+") do |fp|
+    File.open("#{@path}/config.run", "w+") do |fp|
       fp.write("#This file is used by 'mud server' to launch the mud server\n")
       fp.write("\n")
       fp.write("require ::File.expand_path('../config/application', __FILE__)\n")
       fp.write("run #{@project_name}::Application\n")
+      fp.write("\n")
+    end
+
+    File.open("#{@path}/config/application.rb", "w+") do |fp|
+      fp.write("dream_mud_path = '#{File.expand_path('../../lib',__FILE__)}'\n")
+      fp.write("$:.unshift(dream_mud_path\n")
+      fp.write("\n")
+      fp.write("require 'dream_mud/all'\n")
+      fp.write("\n")
+      fp.write("if defined?(Bundler)\n")
+      fp.write("  Bundler.require\n")
+      fp.write("end\n")
+      fp.write("\n")
+      fp.write("module #{@project_name}\n")
+      fp.write("  class Application < DreamMUD::Application\n")
+      fp.write("  end\n")
+      fp.write("end\n")
       fp.write("\n")
     end
   end

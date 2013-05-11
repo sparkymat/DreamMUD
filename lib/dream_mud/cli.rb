@@ -26,8 +26,9 @@ else
       creator.setup
     end
   when "s", "server"
-    if File.exists("config.run")
-      require './config.run'
+    if File.exists?("config.run")
+      app = IO.read("./config.run")
+      eval(app)
     else
       puts "Error: Cannot find project configuration"
     end
