@@ -1,4 +1,6 @@
-require './project_creator'
+dream_mud_path = File.expand_path('../../lib', __FILE__)
+$:.unshift(dream_mud_path)
+require 'dream_mud/project_creator'
 
 Signal.trap("INT") { puts; exit(1) }
 
@@ -21,7 +23,7 @@ else
       show_help
     else
       creator = DreamMUD::ProjectCreator.new(ARGV[1])
-      creator.setup_folders
+      creator.setup
     end
   end
 end
