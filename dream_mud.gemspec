@@ -5,7 +5,7 @@ require 'dream_mud/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "dream_mud"
-  spec.version       = DreamMud::VERSION
+  spec.version       = DreamMUD::VERSION
   spec.authors       = ["Ajith Hussain"]
   spec.email         = ["csy0013@googlemail.com"]
   spec.description   = %q{Dream MUD is a next-gen, Ruby-based MUD codebase. It's structure is inspired by Rails.}

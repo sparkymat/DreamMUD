@@ -1,4 +1,4 @@
-# DreamMud
+# DreamMUD
 
 DreamMUD is a MUD codebase inspired by ResortMUD, and developed in Ruby.
 

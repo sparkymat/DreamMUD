@@ -33,12 +33,10 @@ class ProjectCreator
   end
 
   def create_config
-    File.open("#{@path}/config.run", "w+") do |fp|
-      fp.write("#This file is used by 'mud server' to launch the mud server\n")
+    File.open("#{@path}/Gemfile") do |fp|
+      fp.write("source 'https://rubygems.org'\n")
       fp.write("\n")
-      fp.write("require ::File.expand_path('../config/application', __FILE__)\n")
-      fp.write("run #{@project_name}::Application\n")
-      fp.write("\n")
+      fp.write("gem 'dream_mud', '#{DreamMUD::VERSION}'\n\n")
     end
 
     File.open("#{@path}/config/application.rb", "w+") do |fp|
