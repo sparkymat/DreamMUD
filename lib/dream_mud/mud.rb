@@ -1,1 +1,3 @@
+require 'ruby'
+
 Bundler.require
