@@ -47,6 +47,9 @@ class ProjectCreator
 
   def create_app_file
     File.open("#{@path}/run.rb","w+") do |fp|
+      fp.write("#!/usr/bin/env ruby\n")
+      fp.write("\n")
+      fp.write("require './mud.rb'\n")
     end
   end
 end
